@@ -1,38 +1,39 @@
-# LinuxCheck
+# LinuxCheckEng
+this is a just english version of linuxcheck.
 
-Linux应急处置/信息搜集/漏洞检测工具，支持基础配置/网络流量/任务计划/环境变量/用户信息/Services/bash/恶意文件/内核Rootkit/SSH/Webshell/挖矿文件/挖矿进程/供应链/服务器风险等13类70+项检查
-### 功能
+Linux emergency response/information collection/vulnerability detection tools, support basic configuration/network traffic/task planning/environment variables/user information/Services/bash/malicious files/kernel Rootkit/SSH/Webshell/mining files/mining process/supply 70+ inspections in 13 categories such as chain/server risk
+### Function
 
-* 基础配置检查
-    * 系统配置改动检查
-    * 系统信息（IP地址/用户/开机时间/系统版本/Hostname/服务器SN）
-    * CPU使用率
-    * 登录用户信息
+* Basic configuration check
+    * System configuration change check
+    * System information (IP address/user/boot time/system version/Hostname/server SN)
+    * CPU usage
+    * Login user information
     * CPU TOP 15
-    * 内存 TOP 15
-    * 磁盘剩余空间检查
-    * 硬盘挂载
-    * 常用软件检查
+    * Memory TOP 15
+    * Disk free space check
+    * Hard disk mount
+    * Commonly used software check
     * /etc/hots
-* 网络/流量检查
+* Network/traffic inspection
     * ifconfig
-    * 网络流量
-    * 端口监听
-    * 对外开放端口
-    * 网络连接
-    * TCP连接状态
-    * 路由表
-    * 路由转发
+    * Network traffic
+    * Port listening
+    * Open ports to the outside world
+    * Internet connection
+    * TCP connection status
+    * routing table
+    * Route forwarding
     * DNS Server
     * ARP
-    * 网卡混杂模式检查
-    * iptables 防火墙
-* 任务计划检查
-    * 当前用户任务计划
-    * /etc/系统任务计划
-    * 任务计划文件创建时间
-    * crontab 后门排查
-* 环境变量检查
+    * Network card promiscuous mode check
+    * iptables firewall
+* Task plan check
+    * Current user task plan
+    * /etc/system task schedule
+    * Task plan file creation time
+    * crontab backdoor investigation
+* Environment variable check
     * env
     * path
     * LD_PRELOAD
@@ -41,67 +42,67 @@ Linux应急处置/信息搜集/漏洞检测工具，支持基础配置/网络流
     * PROMPT_COMMAND
     * LD_LIBRARY_PATH
     * ld.so.preload
-* 用户信息检查
-    * 可登陆用户
-    * passwd文件修改日期
+* User information check
+    * Can login user
+    * passwd file modification date
     * sudoers
-    * 登录信息（w/last/lastlog）
-    * 历史登陆ip
-* Services 检查
-    * SystemD运行服务
-    * SystemD服务创建时间
-* bash检查
+    * Login information (w/last/lastlog)
+    * Historical login ip
+* Services check
+    * SystemD running service
+    * SystemD service creation time
+* bash check
     * History
-    * History命令审计
+    * History command audit
     * /etc/profile
     * $HOME/.profile
     * /etc/rc.local
     * ~/.bash_profile
     * ~/.bashrc
-    * bash反弹shell
-* 文件检查
-    * ...隐藏文件
-    * 系统文件修改时间检测
-    * 临时文件检查（/tmp /var/tmp /dev/shm）
+    * bash rebound shell
+* Document check
+    * ...hidden files
+    * System file modification time detection
+    * Temporary file check (/tmp /var/tmp /dev/shm)
     * alias
-    * suid特殊权限检查
-    * 进程存在文件未找到
-    * 近七天文件改动 mtime
-    * 近七天文件改动 ctime
-    * 大文件>200mb
-    * 敏感文件审计（nmap/sqlmap/ew/frp/nps等黑客常用工具）
-    * 可疑黑客文件（黑客上传的wget/curl等程序，或者将恶意程序改成正常软件例如nps文件改为mysql）
-* 内核Rootkit 检查
-    * lsmod 可疑模块
-    * 内核符号表检查
-    * rootkit hunter 检查
-    * rootkit .ko模块检查
-* SSH检查
-    * SSH 爆破
-    * SSHD 检测
-    * SSH 后门配置
-    * SSH inetd后门检查
+    * suid special permission check
+    * process exists file not found
+    * File change mtime in the past seven days
+    * File change ctime in the past seven days
+    * Large files >200mb
+    * Sensitive file auditing (common tools used by hackers such as nmap/sqlmap/ew/frp/nps)
+    * Suspicious hacker files (programs such as wget/curl uploaded by hackers, or changing malicious programs into normal software such as nps files into mysql)
+* Kernel Rootkit check
+    * lsmod suspicious module
+    * Kernel symbol table check
+    * rootkit hunter check
+    * rootkit .ko module check
+* SSH check
+    * SSH brute force
+    * SSHD detection
+    * SSH backdoor configuration
+    * SSH inetd backdoor check
     * SSH key
-* Webshell 检查
-    * php webshell检查
-    * jsp webshell检查
-* 挖矿文件/进程检查
-    * 挖矿文件检查
-    * 挖矿进程检查
-    * WorkMiner检测
-    * Ntpclient检测
-* 供应链投毒检查
-    * Python PIP 投毒检查
-* 服务器风险检查
-    * Redis弱密码检测
+* Webshell inspection
+    * php webshell check
+    * jsp webshell inspection
+* Mining file/process check
+    * Mining file check
+    * Mining progress check
+    * WorkMiner detection
+    * Ntpclient detection
+* Supply chain poison inspection
+    * Python PIP poison check
+* Server risk check
+    * Redis weak password detection
 
 ### Usage
 
-联网状态：
+Internet status:
  - apt-get install silversearcher-ag
  - yum -y install the_silver_searcher  
 
-离线状态：   
+Offline status:   
  - Debian：dpkg -i silversearcher-ag_2.2.0-1+b1_amd64.deb  
  - Centos：rpm -ivh the_silver_searcher-2.1.0-1.el7.x86_64.rpm  
 
@@ -116,17 +117,17 @@ chmod u+x LinuxCheck.sh
 ./LinuxCheck.sh  
 ```
 
-如果已经安装了ag和rkhunter可以直接使用以下命令 
+If ag and rkhunter have been installed, you can directly use the following command
 
 ```
 bash -c "$(curl -sSL https://raw.githubusercontent.com/al0ne/LinuxCheck/master/LinuxCheck.sh)"  
 ```
 
-文件会保存成ipaddr_hostname_username_timestamp.log 这种格式
+The file will be saved in the format of ipaddr_hostname_username_timestamp.log
 
-### 参考
+### Reference
 
-此工具的编写主要参考了以下几款工具/文章并结合个人经验完成
+The writing of this tool mainly refers to the following tools/articles and is completed in combination with personal experience
 
 Linenum    
 https://github.com/lis912/Evaluation_tools  
